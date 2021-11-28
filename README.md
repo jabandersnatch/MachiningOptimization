@@ -22,6 +22,6 @@ Este es un proyecto de libre uso, esta diseñado para que personas con poco o nu
 * [Generación de la superficie](#gen_surface)
 * [Grafica de la superficie](#surf_graph)
 *  [Selección de indicadores optimos](#opt_index)
-*  [Optimizació de procesos](#process_opt)
+*  [Optimización de procesos](#process_opt)
 *  [Grafica de optimización](#graph_opt)
 *  [Recursos del proyecto](#resources)
