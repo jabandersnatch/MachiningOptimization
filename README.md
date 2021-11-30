@@ -8,7 +8,7 @@ Este es un proyecto de libre uso, esta diseñado para que personas con poco o nu
 <!-- !toc (minlevel=2 omit="Table of Contents") -->
 * [Proposito](#proposito)
 * [Introducción](#introducción)
-* [¿Que herramientas necesito para usar este proyecto?](#¿que-herramientas-necesito-para-usar-este-proyecto?)
+* [Herramientas necesarias para correr el proyecto](#herramientas-necesarias-para-correr-el-proyecto)
    * [Anaconda](#anaconda)
    * [Python](#python)
    * [Google Colab](#google_colab)
@@ -31,5 +31,32 @@ La razón de realizar este proyecto es para acerca a sectores de la industria a 
 
 # Introducción
 En este proyecto se va a implementar el analisis dimensional que permite optimizar y reducir costos usando numeros admiencionales que describen las caracteristicas de la operación de mecanizado. Esta teoría se basa en una investigación publicada en el 8° congreso iberoamericano de ingeniería mecánica realizada por un estudiante de Maestria y un profesor de la universidad de los Andes. Donde estudiaron las principales variables que influyen en la rentabilidad, costos y tiempos de los procesos de mecanizado. 
-# ¿Que herramientas necesito para usar este proyecto?
+# Herramientas necesarias para correr el proyecto
+Para utilizar este proyecto es necesario tener una cuenta de GitHub. Si no tiene una cuenta de GitHub puede crear una en siguiendo los pasos que describe en el siguiente enlace [Link](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip9qCttb_0AhU3QzABHWxeD5cQFnoECAUQAQ&url=https%3A%2F%2Fgithub.com%2Fjoin&usg=AOvVaw0H9TK-nu7JfXaoNeNMgJEk), tambien es necesario instalar git siguiendo el siguiente tutorial [Link](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip9qCttb_0AhU3QzABHWxeD5cQFnoECAUQAQ&url=https%3A%2F%2Fgit-scm.com%2Fbook%2Fen%2Fv2%2FGetting-Started-Installing-Git&usg=AOvVaw0H9TK-nu7JfXaoNeNMgJEk).
+Una ves instalado git se debe crear una carpeta en la cual se guardaran los archivos necesarios para correr el proyecto se hace un gir fork al repositorio de este proyecto. Despues de esto se realiza un git clone del repositorio del proyecto dentro de los repositorios personales. Finalmente desde git se realiza un git clone del repositorio dentro de la carpeta que se desea guardar el proyecto.
+
+Para correr el proyecto existe las siguientes alternativas:
+* (Recomendado) Correr el proyecto usando Anaconda.
+* Correr el proyecto desde python.
+* Correr el proyecto desde Google Colab.
+## Anaconda
+Desde el siguiente link se puede descargar Anaconda y se debe instalar en el computador. [Link](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip9qCttb_0AhU3QzABHWxeD5cQFnoECAUQAQ&url=https%3A%2F%2Fwww.anaconda.com%2Fdownload%2F&usg=AOvVaw0H9TK-nu7JfXaoNeNMgJEk)
+## Python
+Desde el siguiente link se puede descargar python y se debe instalar en el computador. [Link](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip9qCttb_0AhU3QzABHWxeD5cQFnoECAUQAQ&url=https%3A%2F%2Fwww.python.org%2Fdownloads%2F&usg=AOvVaw0H9TK-nu7JfXaoNeNMgJEk)
+
+Adicionalmente se recomienda crear un ambiente virtual de python.
+Para esto se debe correr las siguientes lineas de codigo en el terminal:
+
+Para crear un abiente  virtual.
+```
+python -m venv env
+```
+Para activar el ambiente virtual.
+```
+env/bin/activate
+```
+Luego de esto se debe correr el siguiente comando para instalar las librerias necesarias.
+```
+pip install -r requirements.txt
+```
 
