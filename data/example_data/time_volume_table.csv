@@ -1,0 +1,5 @@
+"Tabla de tiempos y volumen (s, mm^3)",Valor
+Tp: Tiempo de preparación de la máquina [s],1800.0
+Tt:Tiempo de cambio de la herramienta [s],900.0
+Ti: Tiempo de improductividad [s],5000.0
+Volumen de la materia  [mm^3],506707.4791
