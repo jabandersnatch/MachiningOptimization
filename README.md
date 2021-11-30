@@ -6,9 +6,9 @@ En este repositorio se realizo un proyecto que busca ayudar a los talleres de me
 Este es un proyecto de libre uso, esta diseñado para que personas con poco o nulo conocimento de programación sean capaces de usarlo y implementarlo en su negocio.
 ## Contenido
 <!-- !toc (minlevel=2 omit="Table of Contents") -->
-* [Proposito](#purpose)
-* [Introducción](#intro)
-* [¿Que herramientas necesito para usar este proyecto?](#install_guide)
+* [Proposito](#proposito)
+* [Introducción](#introducción)
+* [¿Que herramientas necesito para usar este proyecto?](#¿que-herramientas-necesito-para-usar-este-proyecto?)
    * [Anaconda](#anaconda)
    * [Python](#python)
    * [Google Colab](#google_colab)
@@ -26,9 +26,10 @@ Este es un proyecto de libre uso, esta diseñado para que personas con poco o nu
 *  [Grafica de optimización](#graph_opt)
 *  [Recursos del proyecto](#resources)
 
-##  Proposito
+#  Proposito
 La razón de realizar este proyecto es para acerca a sectores de la industria a las herramientas de desarrollo de software para la toma de decisiones en el negocio. Concretamente este tipo de proyecto es uno de Data Science, es decir, es una herramienta que permite la toma de decisiones basadas en datos. En los talleres de mecanizado se realizan multiples operaciones a diario y se necesita una herramienta que permita tomar decisiones para mejorar la rentabilidad de los procesos.
 
-## Introducción
+# Introducción
 En este proyecto se va a implementar el analisis dimensional que permite optimizar y reducir costos usando numeros admiencionales que describen las caracteristicas de la operación de mecanizado. Esta teoría se basa en una investigación publicada en el 8° congreso iberoamericano de ingeniería mecánica realizada por un estudiante de Maestria y un profesor de la universidad de los Andes. Donde estudiaron las principales variables que influyen en la rentabilidad, costos y tiempos de los procesos de mecanizado. 
+# ¿Que herramientas necesito para usar este proyecto?
 
