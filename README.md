@@ -12,6 +12,7 @@ Este es un proyecto de libre uso, esta diseñado para que personas con poco o nu
    * [Anaconda](#anaconda)
    * [Python](#python)
    * [Google Colab](#google_colab)
+   * [VS Code](#vs_code)
 * [¿Cual es teoria que soporta este proyecto?](#theory)
 * [Toma de datos](#data_collection)
 * [Carga de datos](#load_data)
@@ -25,6 +26,7 @@ Este es un proyecto de libre uso, esta diseñado para que personas con poco o nu
 *  [Optimización de procesos](#process_opt)
 *  [Grafica de optimización](#graph_opt)
 *  [Recursos del proyecto](#resources)
+*  [Referencias](#referencias)
 
 #  Proposito
 La razón de realizar este proyecto es para acerca a sectores de la industria a las herramientas de desarrollo de software para la toma de decisiones en el negocio. Concretamente este tipo de proyecto es uno de Data Science, es decir, es una herramienta que permite la toma de decisiones basadas en datos. En los talleres de mecanizado se realizan multiples operaciones a diario y se necesita una herramienta que permita tomar decisiones para mejorar la rentabilidad de los procesos.
@@ -41,8 +43,10 @@ Para correr el proyecto existe las siguientes alternativas:
 * Correr el proyecto desde Google Colab.
 ## Anaconda
 Desde el siguiente link se puede descargar Anaconda y se debe instalar en el computador. [Link](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip9qCttb_0AhU3QzABHWxeD5cQFnoECAUQAQ&url=https%3A%2F%2Fwww.anaconda.com%2Fdownload%2F&usg=AOvVaw0H9TK-nu7JfXaoNeNMgJEk)
+No es necesario ningun proceso adicional para correr el proyecto, VS Code auto detecta el entorno de Anaconda y lo corre sin problemas. Adicionalmente Anaconda viene con las librerias necesarias para correr el proyecto entre otras que pueden resultar utiles si deciden expander sobre el proyecto.
 ## Python
 Desde el siguiente link se puede descargar python y se debe instalar en el computador. [Link](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip9qCttb_0AhU3QzABHWxeD5cQFnoECAUQAQ&url=https%3A%2F%2Fwww.python.org%2Fdownloads%2F&usg=AOvVaw0H9TK-nu7JfXaoNeNMgJEk)
+
 
 Adicionalmente se recomienda crear un ambiente virtual de python.
 Para esto se debe correr las siguientes lineas de codigo en el terminal:
@@ -59,4 +63,6 @@ Luego de esto se debe correr el siguiente comando para instalar las librerias ne
 ```
 pip install -r requirements.txt
 ```
-
+## VS Code
+Independientemente de la herramienta que se utilice para correr el proyecto, es necesario tener instalado Vs Code. [Link](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip9qCttb_0AhU3QzABHWxeD5cQFnoECAUQAQ&url=https%3A%2F%2Fcode.visualstudio.com%2Fdownload%2F&usg=AOvVaw0H9TK-nu7JfXaoNeNMgJEk). Luego instale el pulgin de python siga el video tutorial [Link](https://www.youtube.com/watch?v=-IyA_Yvs8IQ), este pulgin deberia instalar el pulgion de jupyter notebook, si no agrege este manualmente.
+## Google Colab
