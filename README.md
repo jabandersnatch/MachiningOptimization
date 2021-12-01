@@ -20,8 +20,15 @@ Este es un proyecto de libre uso, esta diseñado para que personas con poco o nu
 - [Grafica de los indicadores](#grafica-de-los-indicadores)
 - [Generación de la superficie](#generación-de-la-superficie)
 - [Grafica de la superficie](#grafica-de-la-superficie)
+  - [Grafica de la superficie 3D](#grafica-de-la-superficie-3d)
+  - [Grafica de la superficie 3D por material](#grafica-de-la-superficie-3d-por-material)
+  - [Grafica de contorno](#grafica-de-contorno)
+  - [Grafica de contorno por material](#grafica-de-contorno-por-material)
 - [Selección de indicadores optimos](#selección-de-indicadores-optimos)
 - [Optimización de procesos](#optimización-de-procesos)
+- [Grafica de optimización](#grafica-de-optimización)
+- [Exportación de datos](#exportación-de-datos)
+- [Consideraciones](#consideraciones)
 - [Referencias](#referencias)
 
 #  Propósito
@@ -67,32 +74,31 @@ Para usar Google Colab no necesita instalar ninguna herramienta adicional. Simpl
 # Teoría
 Este proyecto se basa en la teoría de el análisis dimensional. Concretamente se implementa en teorema pi de Vaschy - Buckingham. Este teorema dicta que si existe un sistema de n ecuaciones que describa los comportamientos de la masa, tiempo y longitud con k constantes, entonces existe una ecuación compuesta de numeros adminecionales que tambien cumpla con las mismas condiciones.
 
-De este teorema se escogio una serie de numeros adimencionales que mejor describen el comportamiento de las operaciones de mecanizado. Estos numeros se representan como $\pi_1$, $\pi_2$ y $\pi_3$.
+De este teorema se escogio una serie de numeros adimencionales que mejor describen el comportamiento de las operaciones de mecanizado. Estos numeros se representan como pi_1, pi_2$ y pi_3.
 
 Para establecer como se hallan estos numeros primero se tiene que presentar los datos que los componen. Los cuales se encuentran en la siguiente tabla.
 
 |Símbolo  | Descripción                                       |
--------- | ---------------------------------------------------|
-|$T_p$    | Tiempo de preparación de la máquina (s).          |
-|$T_i$    | Tiempo de Improductividad (s)                     |
-|$T_{cd}$ | Tiempo de carga y descarga de material (s).       |
-|$T_{t}$   | Tiempo de cambio de la herramienta (s).          |
-|$C_p$    | Costo de preparación de la máquina ($).           |
-|$C_i$    | Costo de improductividad ($).                     |
-|$C_p$    | Costo de preparación de la máquina ($).           |
-|$C_f$    | Costo del fluido de corte ($).                    |
-|$C_{om}$ | Costo de operacion de la máquina ($).             |
-|$V_b$    | Desgaste de operación  de la máquina ($\mu m$).   |
-|$A_v$    | Velocidad de avance del movimiento                |
-$P_c$    | Profundidad de corte (mm)                          |
-|$L_m$    | Longitud mecanizada de material (mm)              |
-|$T$      | Tiempo efectivo de mecanizado (min)               |
-|$V_{MR}$ | Volumen de material retirado (mm^3)               |
-|$T_{OHP}$| tiempo de operación de la herramienta (s)         |
-|$C_{MP}$ | Costo de materia prima ($).                       |
-|$V_{MP}$ | Volumen de materia prima ($mm^3$)                 |
-|$V_p$    | Valor de la producción ($).                       |
-|$V_v$    | Valor de la venta ($).                            |
+--------  | --------------------------------------------------|
+|T_p      | Tiempo de preparación de la máquina (s).          |
+|T_i      | Tiempo de Improductividad (s)                     |
+|T_cd     | Tiempo de carga y descarga de material (s).       |
+| T_t     | Tiempo de cambio de la herramienta (s).           |
+|C_p      | Costo de preparación de la máquina ($).           |
+|C_p      | Costo de preparación de la máquina ($).           |
+|C_f      | Costo del fluido de corte ($).                    |
+|C_om     | Costo de operacion de la máquina ($).             |
+|V_b      | Desgaste de operación  de la máquina ($\mu m$).   |
+|A_v      | Velocidad de avance del movimiento                |
+|P_c      | Profundidad de corte (mm)                         |
+|L_m      | Longitud mecanizada de material (mm)              |
+|T        | Tiempo efectivo de mecanizado (min)               |
+|V_MR     | Volumen de material retirado (mm^3)               |
+|T_OHP    | tiempo de operación de la herramienta (s)         |
+|C_MP     | Costo de materia prima ($).                       |
+|V_MP     | Volumen de materia prima ($mm^3$)                 |
+|V_p      | Valor de la producción ($).                       |
+|V_v      | Valor de la venta ($).                            |
 
 Para información sobre como hallar esto valores referirse a la sección de [toma de datos](#toma-de-datos). Una vez hallados los datos se procede a hallar los numeros adimencionales. 
 
@@ -104,7 +110,7 @@ Para información sobre como hallar esto valores referirse a la sección de [tom
 
 <img src="https://render.githubusercontent.com/render/math?math=C_{HF}=\left(\frac{C_H\times T_{OHP}}{NF\times T_{TM}}\right)">
 
-<img src="https://render.githubusercontent.com/render/math?math=C_{HF}=\pi_2=\frac{\frac{C_1}{V_b}}{\frac{C_{HF}}{L_m}}">
+<img src="https://render.githubusercontent.com/render/math?math=\pi_2=\frac{\frac{C_1}{V_b}}{\frac{C_{HF}}{L_m}}">
 
 
 <img src="https://render.githubusercontent.com/render/math?math=\pi_3=\frac{V_v}{V_p}">
@@ -119,7 +125,7 @@ Estos indicadores responden a 3 preguntas:
 2. ¿Cuanto cuesta comprar y usar una herramienta de corte?
 3. ¿Cuanto es la rentabilidad de un proceso de maquinado?
 
-Así pues $\pi_1$, $\pi_2$ y $\pi_3$ son los indicadores que nos permiten hallar los costos de operación de la máquina. Donde $\pi_1$ es el costo de producción, $\pi_2$ es el costo de herramienta y $\pi_3$ es el margen de rentabilidad.
+Así pues pi_1, pi_2 y pi_3 son los indicadores que nos permiten hallar los costos de operación de la máquina. Donde pi_1 es el costo de producción, pi_2 es el costo de herramienta y pi_3 es el margen de rentabilidad.
 
 # Toma de datos
 Para hallar los datos se realizo un handbook que lo encuentran el la carpeta de documentos en el folder llamado Data Collection Guide. En este se encuentran una guía extensiva de como realizar la toma de datos, esta parte se considera una de las mas importantes para el análisis dimensional.
@@ -148,13 +154,41 @@ En esta parte el nootebook realiza una grafica 3D de los indicadores adimenciona
 
 # Generación de la superficie
 
+Para la generación de la superficie de mejor ajuste se utilizó la herramienta `scipy.optimize.curve_fit` que permite hallar la función que mejor se ajusta a los datos. Para esto se ingreso una función general de la forma **A*x^b*y^c + d*x^(b+1)*y^(c+1)** lo que hace esta función es iterar con los parametros **a,b,c,d** y hallar la curva que menor error cuadratico tenga. Si la superficie presenta errores altos es recomendable cambiar la función general por **A*x^b*y^c** esta función presentara un comportamiento adecuando pero no tan descriptivo como la anterior. Es un proceso iterativo, la función en si no representa ningun comportamiento real de los indicadores es simplemte una relacion que se evidencio para el caso del taller en donde se tomaron los datos.
+
 # Grafica de la superficie
 
+En esta seccion se va a graficar  la superficie de mejor ajuste en conjunto a una grafica de dispersión de los datos. Para esto se utilizo la libreria `matplotlib.pyplot` y la funcion `scipy.optimize.curve_fit` para hallar la superficie de mejor ajuste. Se empleo un mapa de calor para hacer mas evidente los altos y los bajos de la superficie.
+
+En esta sección se grafica 4 tipos de graficas:
+## Grafica de la superficie 3D
+La primera grafica es la superficie de mejor ajuste, con dispersion de los datos en 3D. Esta grafica no hace la distición del material de la herramienta. Sirve para revisar que el comportamiento de la superficie sea adecuado. Al decir adecuado se refiere a que la superficie no presente errores altos y el comportamiento sea concorde a lo que representa los numeros adimencionales.
+## Grafica de la superficie 3D por material
+Es similar a la primera grafica, pero se hace la distinción de los materiales. Sirve para revisar a nivel global la distribución de los datos con respecto al material.
+## Grafica de contorno
+Se grafica la superficie de mejor ajuste, pero con una distribución de los datos en 2D. Esta grafica sirve para revisar el comportamiento de la superficie en el plano xy. Con esta se puede apreciar que las curvas de nivel son la rentabilidad de la operación de maquinado. Con esta se puede apreciar la distribución general de los indicadores en el plano xy.
+## Grafica de contorno por material
+Se grafica la superficie de mejor ajuste, pero con una distribución de los datos en 2D. Esta grafica sirve para revisar el comportamiento de la superficie en el plano xy. Con esta se puede apreciar la distribución de los indicadores en el plano xy. El sección de [Optimización de procesos](#optimizacion-de-procesos) esta grafica se implementa para revisar cual es el mejor material para la herramienta de corte.
 # Selección de indicadores optimos
+En esta parte el usuario escoge los indicadores que sean los mejores para la herramienta de corte. Uno de los indicadores mas útiles para optimizar es el de la rentabilidad de la operación de maquinado (Pi_3). Para esto  se realiza una función que unicamente colorea las curvas de nivel que esten por encima del indicador Pi_3 dado por el usuario. La razón por la cual se implemento esta función es que el usuario puede decidir que tan alta debe ser el indicador Pi_3 para que la herramienta de corte sea optima. Esto evita colocar condiciones que sean imposibles de cumplir.
 
 # Optimización de procesos
+En esta parte usando las ecuaciones planteadas en el la parte de [Teoria](#teoria) se implementa el algoritmo de optimización de procesos. Para esto se utiliza la libreria `scipy.optimize.fsolve`. Se puede resolver para multiples condiciones lo importante a tener en cuenta es que es un sistema de ecuaciones 2x2 , asi que solo puede haber un maximo de 2 incognitas, `fsolve` permite resolver ecuaciones no lieales entre otras. Potencialmente usando el indicador Pi_3 se podria expandir el sistema de ecuaciones a 3x3, pero no es necesario. En este codigo se esta optimizado para `V_b` que es el desgaste y `T_POH` que es el tiempo de operación de la herramienta de corte. En dado caso para resolver usando los otros parametros de la herramienta de corte se debe modificar el codigo. En este debe proveer todos los parametros que no se van hallar y cambiar en el metodo `optimal_cost` sus respectivos lambdas donde se coloca el nombre de la variable que se quiera optimizar. Es importante tener en cuenta las dimensiones y el significado de cada variable, si su optimizacion le da un valor negativo juegue con los demas parametros cosa de que le de una solución optima y real.
 
+# Grafica de optimización
 
+En esta seccion se realiza una grafica de barras para evidenciar los cambios significativos de los parametros optimos con respecto a los evidenciados en la toma de datos.
+# Exportación de datos
+Para la exportacíon de datos simplemente corra el codigo, este lo ayudara a exportar los datos a un excel o a un csv. Aca se añaden las columans Pi 1, Pi 2 y Pi 3. 
+# Consideraciones
+
+Esta es una herramienta que asiste a las tomas de decisiones de la empresa, no es un remplazo a tecnicas como flujos de caja libre, intuición de procedimientos, etc. Simplemente es una herramienta mas que busca concienciar de la importacia de la reducción de costos y de la mejora de la calidad de la herramienta de corte. El objetivo es acercar a esta industria de la manufactura a soluciones TI. 
 # Referencias
 
-RB1:DeGarmo's Materials and Processes in Manufacturing; J. T. Black,Ronald A. Kohser; Wiley; 2019; Enhanced eTex, 13th Edition; ISBN: 978-1-119-66519-9
+
+
+[1] 	J. Grueso, «DESARROLLO DE UNA METODOLOGÍA PARA LA EVALUACIÓN TÉCNICO-ECONÓMICA DEL DESEMPEÑO DE HERRAMIENTAS DE CORTE APOYADO EN EL ANÁLISIS DIMENSIONAL.,» 8º CONGRESO IBEROAMERICANO DE INGENIERIA MECANICA, p. 9, 2007. 
+
+[2] 	V. P. Astakhov, «The assessment of cutting tool wear,» International journal of machine tools & manufacture , design research and application, vol. 44, nº 2004, p. 11, 2003. 
+
+[3]     DeGarmo's Materials and Processes in Manufacturing; J. T. Black,Ronald A. Kohser; Wiley; 2019; Enhanced eTex, 13th Edition; ISBN: 978-1-119-66519-9D
