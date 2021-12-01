@@ -31,7 +31,7 @@ La razón de realizar este proyecto es para acerca a sectores de la industria a 
 En este proyecto se va a implementar el analisis dimensional que permite optimizar y reducir costos usando numeros adimensionales que describen las caracteristicas de la operación de mecanizado. Esta teoría se basa en una investigación publicada en el 8° congreso iberoamericano de ingeniería mecánica realizada por un estudiante de Maestria y un profesor de la universidad de los Andes. Donde estudiaron las principales variables que influyen en la rentabilidad, costos y tiempos de los procesos de mecanizado. 
 # Herramientas necesarias para correr el proyecto
 Para utilizar este proyecto es necesario tener una cuenta de GitHub. Si no tiene una cuenta de GitHub puede crear una en siguiendo los pasos que describe en el siguiente enlace [Link](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip9qCttb_0AhU3QzABHWxeD5cQFnoECAUQAQ&url=https%3A%2F%2Fgithub.com%2Fjoin&usg=AOvVaw0H9TK-nu7JfXaoNeNMgJEk), tambien es necesario instalar git siguiendo el siguiente tutorial [Link](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip9qCttb_0AhU3QzABHWxeD5cQFnoECAUQAQ&url=https%3A%2F%2Fgit-scm.com%2Fbook%2Fen%2Fv2%2FGetting-Started-Installing-Git&usg=AOvVaw0H9TK-nu7JfXaoNeNMgJEk).
-Una ves instalado git se debe crear una carpeta en la cual se guardaran los archivos necesarios para correr el proyecto se hace un gir fork al repositorio de este proyecto. Despues de esto se realiza un git clone del repositorio del proyecto dentro de los repositorios personales. Finalmente desde git se realiza un git clone del repositorio dentro de la carpeta que se desea guardar el proyecto.
+Una ves instalado git se debe crear una carpeta en la cual se guardaran los archivos necesarios para correr el proyecto se hace un gir fork al repositorio de este proyecto. Despues de esto se realiza un git clone del repositorio del proyecto dentro de los repositorios personales. Finalmente desde git se realiza un git clone del repositorio dentro de la carpeta que se desea guardar el proyecto. Puede seguir la guía de clonar un repositorio en el siguiente [Link](https://www.youtube.com/watch?v=CKcqniGu3tA)
 
 Para correr el proyecto existe las siguientes alternativas:
 * (Recomendado) Correr el proyecto usando Anaconda.
@@ -133,6 +133,8 @@ Para cargar los datos a la aplicación se pueden tomar 2 pasos:
 
 Los formatos se encuentran en el folder [`data\templates`](#data-templates).
 
+Se recomienda subir los datos en la carpeta `data` para que sean leidos por la aplicación. para esto tendra que modificar la variable `path` en el notebook del repositorio, notese que solo necesita colocar la ruta relativa, por ejemplo el repositorio por defecto tiene el `path=./data/example_data/` y para cargar los datos se debe colocar `path=./data/`
+
 ## Excel
 
 Para importar los datos desde excel es necesario que el archivo contenga una hoja llamada `Machine materials` en esta se encontrarán los nombres de los materiales de la herramienta de corte, para cada uno de estos nombres debe existir una hoja con el nombre del material. Ademas de la hoja `Machine materials` se encuentra se debe tener unas dos hojas adicionales: `Costs` y la segunda es `Time and Volume` refierase a el archivo `tooling_data_template.xlsx` en [`data\templates`](#data-templates) para ver que parametros debe tener cada hoja. Es importante que los nombres de las columnas esten bien escritos, sin espacios adicionales. No importa el orden de estas.
@@ -141,6 +143,8 @@ Para importar los datos desde excel es necesario que el archivo contenga una hoj
 Este proceso es similar al proceso de excel, pero se debe tener en cuenta que los archivos csv deben estar separados por comas. Adicionalmente en vez de tener una hoja con los nombres de los materiales se debe tener un archivo csv con los nombres del material. En la carpeta `data\templates` se encuentra el archivo `labels_temp.csv` que contiene los nombres de los materiales. Este archivo se carga en el programa y se deserializa en un `DataFrame` que se guarda en la variable `labels`. Con este `DataFrame` se accede a los datos de la columna y se carga los archivos csv que esten guardados con ese nombre.
 
 # Grafica de los indicadores
+
+En esta parte el nootebook realiza una grafica 3D de los indicadores adimencionales. Se marca de un color distinto cada uno de los materiales. Aca su labor es revisar que los indicadores sean los correctos, usualmente se evidencia que la escala de Pi_1 se encuentra en 10^2, mientras que Pi_2 se encuentra en 10^3, finalmente Pi_3 se encuentra en rangos de 0.7 a 3,4. En dado caso que los indicadores no sean los correctos se debe revisar que los datos sean correctos.
 
 # Generación de la superficie
 
