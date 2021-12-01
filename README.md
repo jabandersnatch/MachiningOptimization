@@ -5,8 +5,7 @@ En este repositorio se realizo un proyecto que busca ayudar a los talleres de me
 
 Este es un proyecto de libre uso, esta diseñado para que personas con poco o nulo conocimiento de programación sean capaces de usarlo y implementarlo en su negocio.
 ## Contenido
-<!-- !toc (minlevel=2 omit="Table of Contents") -->
-- [Proposito](#proposito)
+- [Propósito](#propósito)
 - [Introducción](#introducción)
 - [Herramientas necesarias para correr el proyecto](#herramientas-necesarias-para-correr-el-proyecto)
   - [Anaconda](#anaconda)
@@ -18,9 +17,14 @@ Este es un proyecto de libre uso, esta diseñado para que personas con poco o nu
 - [Carga de datos](#carga-de-datos)
   - [Excel](#excel)
   - [CSV](#csv)
+- [Grafica de los indicadores](#grafica-de-los-indicadores)
+- [Generación de la superficie](#generación-de-la-superficie)
+- [Grafica de la superficie](#grafica-de-la-superficie)
+- [Selección de indicadores optimos](#selección-de-indicadores-optimos)
+- [Optimización de procesos](#optimización-de-procesos)
 - [Referencias](#referencias)
 
-#  Proposito
+#  Propósito
 La razón de realizar este proyecto es para acerca a sectores de la industria a las herramientas de desarrollo de software para la toma de decisiones en el negocio. Concretamente este tipo de proyecto es uno de Data Science, es decir, es una herramienta que permite la toma de decisiones basadas en datos. En los talleres de mecanizado se realizan multiples operaciones a diario y se necesita una herramienta que permita tomar decisiones para mejorar la rentabilidad de los procesos.
 
 # Introducción
@@ -91,15 +95,23 @@ $P_c$    | Profundidad de corte (mm)                          |
 |$V_v$    | Valor de la venta ($).                            |
 
 Para información sobre como hallar esto valores referirse a la sección de [toma de datos](#toma-de-datos). Una vez hallados los datos se procede a hallar los numeros adimencionales. 
-```math
-\[\frac{1}{2}\]
-```
-$$V_{MR}=P_c\times L_m \times A_v \times T_{OHP}$$
-$$\pi_1= \frac{\frac{C_p+C_i+C_f+C_{om}}{V_{MR}}}{\frac{C_{MP}}{V_{MP}}}$$
-$$C_1=C_p+C_i+C_f+C_{om}$$
-$$C_{HF}=\left(\frac{C_H\times T_{OHP}}{NF\times T_{TM}}\right)$$
-$$\pi_2=\frac{\frac{C_1}{V_b}}{\frac{C_{HF}}{L_m}}$$
-$$\pi_3=\frac{V_v}{V_p}$$
+
+<img src="https://render.githubusercontent.com/render/math?math=\pi_1= \frac{\frac{C_p+C_i+C_f+C_{om}}{V_{MR}}}{\frac{C_{MP}}{V_{MP}}}">
+
+<img src="https://render.githubusercontent.com/render/math?math=V_{MR}=P_c\times L_m \times A_v \times T_{OHP}">
+
+<img src="https://render.githubusercontent.com/render/math?math=C_1=C_p \oplus C_i \oplus C_f \oplus C_{om}">
+
+<img src="https://render.githubusercontent.com/render/math?math=C_{HF}=\left(\frac{C_H\times T_{OHP}}{NF\times T_{TM}}\right)">
+
+<img src="https://render.githubusercontent.com/render/math?math=C_{HF}=\pi_2=\frac{\frac{C_1}{V_b}}{\frac{C_{HF}}{L_m}}">
+
+
+<img src="https://render.githubusercontent.com/render/math?math=\pi_3=\frac{V_v}{V_p}">
+
+
+
+
 
 Estos indicadores responden a 3 preguntas:
 
@@ -127,6 +139,17 @@ Para importar los datos desde excel es necesario que el archivo contenga una hoj
 
 ## CSV
 Este proceso es similar al proceso de excel, pero se debe tener en cuenta que los archivos csv deben estar separados por comas. Adicionalmente en vez de tener una hoja con los nombres de los materiales se debe tener un archivo csv con los nombres del material. En la carpeta `data\templates` se encuentra el archivo `labels_temp.csv` que contiene los nombres de los materiales. Este archivo se carga en el programa y se deserializa en un `DataFrame` que se guarda en la variable `labels`. Con este `DataFrame` se accede a los datos de la columna y se carga los archivos csv que esten guardados con ese nombre.
+
+# Grafica de los indicadores
+
+# Generación de la superficie
+
+# Grafica de la superficie
+
+# Selección de indicadores optimos
+
+# Optimización de procesos
+
 
 # Referencias
 
