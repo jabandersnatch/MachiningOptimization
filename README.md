@@ -91,6 +91,9 @@ $P_c$    | Profundidad de corte (mm)                          |
 |$V_v$    | Valor de la venta ($).                            |
 
 Para información sobre como hallar esto valores referirse a la sección de [toma de datos](#toma-de-datos). Una vez hallados los datos se procede a hallar los numeros adimencionales. 
+```math
+\[\frac{1}{2}\]
+```
 $$V_{MR}=P_c\times L_m \times A_v \times T_{OHP}$$
 $$\pi_1= \frac{\frac{C_p+C_i+C_f+C_{om}}{V_{MR}}}{\frac{C_{MP}}{V_{MP}}}$$
 $$C_1=C_p+C_i+C_f+C_{om}$$
