@@ -1,0 +1,9 @@
+Tabla de costos (En pesos),Costo [COP]
+Cp: Costos de preparación de la máquina,C_p
+Cf: Costo del fluido de corte,C_f
+Com: Costo de operación de la máquina,C_om
+Ci: Costo de improductividad,C_i
+Insumos (Materia prima),C_MP
+Ss: Remuneración de sueldos y salarios,Ss
+CH: Costo de la herramienta,CH
+C1,C1
